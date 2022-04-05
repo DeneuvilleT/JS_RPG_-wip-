@@ -15,7 +15,7 @@ class Perso {
 
         $('#info').append(`<p>L'attaque de ${this.name} a fait ${this.attack} points de dégats à ${target.name}.</p>`);
 
-        if (target < 0) {
+        if (target.hp < 0) {
             this.hp = 0;
         };
 
@@ -31,7 +31,7 @@ class Perso {
 
 
         $('#info').append(`<p>${this.name} a encaissé ${this.defense} de l'attaque de ${target.name}</p>`);
-        if (target < 0) {
+        if (target.hp < 0) {
             this.hp = 0;
         };
 
@@ -50,7 +50,7 @@ class Perso {
         $('#info').append(`<p>Le sort de ${this.name} a fait ${this.spell} points de dégats à ${target.name}
         </p>`);
 
-        if (target < 0) {
+        if (target.hp < 0) {
             this.hp = 0;
         };
 
