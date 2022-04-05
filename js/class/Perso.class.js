@@ -7,7 +7,7 @@ class Perso {
         this.spell = spell;
     };
 
-    
+
     attackPerso(target) {
         this.attack = getRandomInteger(20, 40);
         target.hp -= this.attack;
@@ -20,15 +20,20 @@ class Perso {
         };
 
         $('#perso1').text(`${this.hp}`);
-    }
+    };
 
 
 
     defensePerso(target) {
         this.attack = getRandomInteger(20, 40);
+
+        let breakDefense = getRandomInteger(1, 2);
+        if (breakDefense === 1) {
+            this.defense = parseInt((this.defense /= 2).toFixed(1));
+        };
+
         let dmg = this.attack - this.defense;
         this.hp -= dmg;
-
 
         $('#info').append(`<p>${this.name} a encaissé ${this.defense} de l'attaque de ${target.name}</p>`);
         if (target.hp < 0) {
@@ -36,7 +41,7 @@ class Perso {
         };
 
         $('#perso1').text(`${this.hp}`);
-    }
+    };
 
 
 
@@ -58,5 +63,5 @@ class Perso {
     };
 };
 
-export default Perso
+export default Perso;
 
