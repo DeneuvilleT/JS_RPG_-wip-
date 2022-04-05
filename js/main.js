@@ -1,4 +1,3 @@
-
 import Program from "./class/Program.class.js";
 
 
