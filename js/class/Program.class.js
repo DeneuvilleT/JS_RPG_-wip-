@@ -14,8 +14,9 @@ class Program {
 
 
     display() {
+        
         if (this.hero.hp > 0 && this.bahamut.hp > 0) {
-            $('#perso1').text(`${this.hero.name} : ${this.hero.hp}`);
+            $('#perso1').text(`${this.hero.name} : ${this.hero.hp}`); 
             $('#perso2').text(`${this.bahamut.name} : ${this.bahamut.hp}`);
         } else {
             $('#commande').css("display", "none");
