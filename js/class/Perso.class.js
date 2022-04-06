@@ -8,7 +8,8 @@ class Perso {
         this.spell = spell;
     };
 
-
+    // Action du joueur
+    
     attackPerso(target) {
         // Calcul des degats
         this.attack = getRandomInteger(20, 40);
