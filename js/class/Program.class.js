@@ -33,12 +33,12 @@ class Program {
         } else {
             if (this.bahamut.hp <= 0) {
                 $('#commande').css("display", "none");
-                $('#affichage').html(`<p>Victoire de ${this.hero.name}</p>`);
+                $('#affichage').html(`<h2>Victoire de ${this.hero.name} !</h2>`);
                 return;
             };
             if (this.hero.hp <= 0) {
                 $('#commande').css("display", "none");
-                $('#affichage').html(`<p>Victoire de ${this.bahamut.name}</p>`);
+                $('#affichage').html(`<h2>Victoire de ${this.bahamut.name} !</h2>`);
                 return;
             };
         };
