@@ -19,7 +19,6 @@ class Perso {
 
         //Gestion de fin de HP
         if (target.hp <= 0) {
-            this.hp = 0;
             $('#barHp').css('display', 'none');
         } else {
             $('#perso1').text(`${this.hp}`);
@@ -46,7 +45,6 @@ class Perso {
 
         //Gestion de fin de HP
         if (target.hp <= 0) {
-            this.hp = 0;
             $('#barHp').css('display', 'none');
         } else {
             $('#perso1').text(`${this.hp}`);
@@ -69,7 +67,6 @@ class Perso {
 
         //Gestion de fin de HP
         if (target.hp <= 0) {
-            this.hp = 0;
             $('#barMp').css('display', 'none');
         } else {
             $('#perso1').text(`${this.hp}`);

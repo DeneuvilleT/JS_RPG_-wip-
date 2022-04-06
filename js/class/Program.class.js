@@ -29,13 +29,17 @@ class Program {
         if (this.hero.hp > 0 && this.bahamut.hp > 0) {
             $('#perso1').text(`${this.hero.name} : ${this.hero.hp} / 400`);
             $('#perso2').text(`${this.bahamut.name} : ${this.bahamut.hp} / 400`);
+            return;
         } else {
-            $('#commande').css("display", "none");
-            if (this.hero.hp > 0) {
+            if (this.bahamut.hp <= 0) {
+                $('#commande').css("display", "none");
                 $('#affichage').html(`<p>Victoire de ${this.hero.name}</p>`);
+                return;
             };
             if (this.hero.hp <= 0) {
+                $('#commande').css("display", "none");
                 $('#affichage').html(`<p>Victoire de ${this.bahamut.name}</p>`);
+                return;
             };
         };
     };
