@@ -6,26 +6,15 @@ class Perso {
         this.attack = attack;
         this.defense = defense;
         this.spell = spell;
-        this.barLife = function (bar, typeDegat) {
-            if (this.name === "Hero") {
-                let widthBar = bar.getBoundingClientRect();
-                bar.style.width = `${widthBar.width - (typeDegat/2)}px`;
-                console.log(widthBar, typeDegat)
-            }
-        };
     };
 
 
-    
-
-
-
     attackPerso(target) {
+        // Calcul des degats
         this.attack = getRandomInteger(20, 40);
         target.hp -= this.attack;
 
-        this.barLife(barHp, this.attack);
-
+        // Mise à jour des infos
         $('#info').append(`<p>L'attaque de ${this.name} a fait ${this.attack} points de dégats à ${target.name}.</p>`);
 
         //Gestion de fin de HP
@@ -37,8 +26,8 @@ class Perso {
         };
     };
 
-
     defensePerso(target) {
+        // Calcul des degats
         this.attack = getRandomInteger(20, 40);
         let breakDefense = getRandomInteger(1, 2);
 
@@ -52,8 +41,7 @@ class Perso {
         let breakDmng = this.attack - this.defense;
         this.hp -= breakDmng;
 
-        this.barLife(barHp, breakDmng)
-
+        // Mise à jour des infos
         $('#info').append(`<p>${this.name} a encaissé ${this.defense} de l'attaque de ${target.name}</p>`);
 
         //Gestion de fin de HP
@@ -65,12 +53,9 @@ class Perso {
         };
     };
 
-
-
     spellPerso(target) {
+        // Gestion de la mana
         if (this.mp <= 0) {
-            $('#info').append("<p>Vous n'avez plus assez de mana</p>");
-            sort.disabled = true;
             return;
         } else {
             this.mp -= 20;
@@ -78,6 +63,7 @@ class Perso {
             target.hp -= this.spell;
         };
 
+        // Mise à jour des infos
         $('#info').append(`<p>Le sort de ${this.name} a fait ${this.spell} points de dégats à ${target.name}
         </p>`);
 

@@ -9,12 +9,14 @@ button{
     padding: 10px;
 }
 #affichage {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
 }
 body{
     background-size: cover;
     background-image: url(/back.jpg);
-    background-attachment: scroll;
+    background-attachment: local;
     color: blanchedalmond;
 }
 
@@ -47,13 +49,13 @@ p {
 #info p {
     text-align: center;
 }
-#barHp{
+#barHp, #barHpD{
     width: 200px;
     height: 15px;
     background-color: red;
     margin: 15px auto;
 }
-#barMp {
+#barMp, #barMpD {
     width: 200px;
     height: 15px;
     background-color: blue;

@@ -15,8 +15,19 @@ class Program {
 
     display() {
         
+        barHp.style.width = `${this.hero.hp/2}px`;
+        barMp.style.width = `${this.hero.mp*2}px`;
+
+        barHpD.style.width = `${this.bahamut.hp / 2}px`;
+        barMpD.style.width = `${this.bahamut.mp * 2}px`;
+        
+        if (this.hero.mp <= 0) {
+            $('#info').append("<p>Vous n'avez plus assez de mana</p>");
+            sort.disabled = true;
+        }
+
         if (this.hero.hp > 0 && this.bahamut.hp > 0) {
-            $('#perso1').text(`${this.hero.name} : ${this.hero.hp}`); 
+            $('#perso1').text(`${this.hero.name} : ${this.hero.hp}`);
             $('#perso2').text(`${this.bahamut.name} : ${this.bahamut.hp}`);
         } else {
             $('#commande').css("display", "none");
@@ -29,14 +40,12 @@ class Program {
         };
     };
 
-
     onClickAttack() {
         $("#info p").empty();
         this.hero.attackPerso(this.bahamut);
         this.contreAttack();
         this.display();
     };
-
 
     onClickDefense() {
         $("#info p").empty();
@@ -45,15 +54,12 @@ class Program {
         this.display();
     };
 
-
     onClickSpell() {
         $("#info p").empty();
         this.hero.spellPerso(this.bahamut);
         this.contreAttack();
         this.display();
     };
-
-
 
     contreAttack() {
         let possibilitiesAction = getRandomInteger(1, 5);
