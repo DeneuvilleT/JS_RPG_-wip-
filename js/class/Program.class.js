@@ -15,11 +15,11 @@ class Program {
 
     display() {
 
-        barHp.style.width = `${this.hero.hp / 2}px`;
-        barMp.style.width = `${this.hero.mp * 2}px`;
+        barHp.value = `${this.hero.hp / 2}`;
+        barMp.value = `${this.hero.mp * 2}`;
 
-        barHpD.style.width = `${this.bahamut.hp / 2}px`;
-        barMpD.style.width = `${this.bahamut.mp * 2}px`;
+        barHpD.value = `${this.bahamut.hp / 2}`;
+        barMpD.value = `${this.bahamut.mp * 2}`;
 
         if (this.hero.mp <= 0) {
             $('#info').append("<p>Vous n'avez plus assez de mana</p>");
