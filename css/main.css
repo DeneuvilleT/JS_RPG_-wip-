@@ -12,6 +12,18 @@ button{
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
+    text-align: left;
+    
+}
+#good div, #bad div{
+    text-align: left;
+    border: 5px groove grey;
+}
+#good, #bad{
+    border: 5px groove grey;
+    background-color:rgba(10, 24, 24, 0.7);
+    padding: 0 10px;
+    width: 240px;
 }
 body{
     background-size: cover;
