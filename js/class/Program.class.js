@@ -14,21 +14,21 @@ class Program {
 
 
     display() {
-        
-        barHp.style.width = `${this.hero.hp/2}px`;
-        barMp.style.width = `${this.hero.mp*2}px`;
+
+        barHp.style.width = `${this.hero.hp / 2}px`;
+        barMp.style.width = `${this.hero.mp * 2}px`;
 
         barHpD.style.width = `${this.bahamut.hp / 2}px`;
         barMpD.style.width = `${this.bahamut.mp * 2}px`;
-        
+
         if (this.hero.mp <= 0) {
             $('#info').append("<p>Vous n'avez plus assez de mana</p>");
             sort.disabled = true;
         }
 
         if (this.hero.hp > 0 && this.bahamut.hp > 0) {
-            $('#perso1').text(`${this.hero.name} : ${this.hero.hp}`);
-            $('#perso2').text(`${this.bahamut.name} : ${this.bahamut.hp}`);
+            $('#perso1').text(`${this.hero.name} : ${this.hero.hp} / 400`);
+            $('#perso2').text(`${this.bahamut.name} : ${this.bahamut.hp} / 400`);
         } else {
             $('#commande').css("display", "none");
             if (this.hero.hp > 0) {
